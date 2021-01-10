@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
+import Form from "./components/Form";
+import Header from "./components/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      name: "",
+      headerOpen: true,
+    };
+  }
+
+  updateNameAndHeader(name, headerOpen) {
+    this.setState({
+      name,
+      headerOpen,
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <div>
+            {this.state.headerOpen ? (
+              <Header
+                triggerParentUpdate={this.updateNameAndHeader.bind(this)}
+              />
+            ) : null}
+          </div>
+          {!this.state.headerOpen ? (
+            <Form
+              name={this.state.name}
+              isHeaderOpen={this.updateNameAndHeader.bind(this)}
+            />
+          ) : null}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

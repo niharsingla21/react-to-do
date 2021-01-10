@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.button {
+  background-color: #d3dae4a9;
+  margin-top: 5mm;
+  border: none;
+  color: white;
+  padding: 15px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.normal-text-field {
+  width: 30ch;
+  font-size: 15;
+  height: 3ch;
+  text-align: center;
+  margin: 5px;
+}
+
+.text-area-field {
+  resize: none;
+  width: 60ch;
+  font-size: 18;
+  height: 15ch;
+  text-align: left;
+  margin: 5px;
+}
+
+.form-style {
+  flex-wrap: wrap;
+}
+
+.date-picker {
+  width: 30ch;
+  font-size: 15;
+  height: 3ch;
+  text-align: center;
+  margin: 3px;
+  background-color: rgb(170, 170, 170);
+  color: rgb(84, 84, 84);
+
+  cursor: default;
+}
+
+.error {
+  font-size: 8pt;
+  color: red;
+}
